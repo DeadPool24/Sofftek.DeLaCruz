@@ -26,6 +26,21 @@ public class DataContext : DbContext
             ve.id_venta
         });
 
+        modelBuilder.Entity<Articulo>().HasKey(art => new
+        {
+            art.id_producto
+        });
+
+        modelBuilder.Entity<Cliente>().HasKey(cli => new
+        {
+            cli.id_cliente
+        });
+
+        modelBuilder.Entity<Asesor>().HasKey(ase => new
+        {
+            ase.id_asesor
+        });
+
         modelBuilder.Entity<DetalleVenta>().HasNoKey();
 
         base.OnModelCreating(modelBuilder);
@@ -34,4 +49,7 @@ public class DataContext : DbContext
 
     public DbSet<Venta> Venta { get; set; }
     public DbSet<DetalleVenta> DetalleVenta { get; set; }
+    public DbSet<Cliente> Cliente { get; set; }
+    public DbSet<Articulo> Articulo { get; set; }
+    public DbSet<Asesor> Asesor { get; set; }
 }

@@ -36,5 +36,11 @@ namespace Sofftek.GestionComercial.Infraestructure.Repository
                           select item);
             return result.ToList();
         }
+
+        public void guardarDetalleVenta(DetalleVenta detalle)
+        {
+            _context.DetalleVenta.Add(detalle);
+            _context.SaveChanges(); 
+        }
     }
 }

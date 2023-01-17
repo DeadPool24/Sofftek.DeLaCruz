@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Sofftek.GestionComercial.Core.Entities;
@@ -23,6 +24,7 @@ namespace Sofftek.GestionComercial.API.Controllers
         /// </summary>
         /// <returns>Lista de Ventas</returns>
         [HttpGet("listarventas", Name = "listarventas")]
+        [Authorize]
         public IActionResult ListarVentas()
         {
             try
@@ -43,6 +45,7 @@ namespace Sofftek.GestionComercial.API.Controllers
         /// <param name="venta">Datos de la venta</param>
         /// <returns>Ok/Bad</returns>
         [HttpPost]
+        [Authorize]
         public IActionResult GuardarVenta(Venta venta)
         {
             try

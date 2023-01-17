@@ -5,7 +5,9 @@ using Sofftek.GestionComercial.Core.Core;
 using Sofftek.GestionComercial.Core.Interface;
 using Sofftek.GestionComercial.Core.Interface.IRepository;
 using Sofftek.GestionComercial.Core.Interface.IService;
+using Sofftek.GestionComercial.Core.Interfaces.IServices.Seguridad;
 using Sofftek.GestionComercial.Core.Services;
+using Sofftek.GestionComercial.Core.Services.Seguridad;
 using Sofftek.GestionComercial.Infraestructure.Repository;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,7 @@ namespace Sofftek.GestionComercial.Infraestructure.Extensions
         
             services.AddScoped<IServiceVentas,ServiceVentas>();
             services.AddScoped<IRepositoryVentas, RepositoryVentas>();
+            services.AddScoped<IAuthService, AuthService>();
             return services;
         }
 
