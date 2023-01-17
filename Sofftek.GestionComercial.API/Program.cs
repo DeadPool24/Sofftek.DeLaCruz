@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Sofftek.GestionComercial.Service.Core;
-using Sofftek.GestionComercial.Service.Extensions;
-using Sofftek.GestionComercial.Service.Helpers;
-using Sofftek.GestionComercial.Service.Interface;
-using Sofftek.GestionComercial.Service.Repository;
+using Sofftek.GestionComercial.Core.Core;
+using Sofftek.GestionComercial.Infraestructure.Extensions;
+using Sofftek.GestionComercial.Core.Helpers;
+using Sofftek.GestionComercial.Core.Interface;
+using Sofftek.GestionComercial.Infraestructure.Repository;
+using Sofftek.GestionComercial.Infraestructure.Extensions;
 using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;

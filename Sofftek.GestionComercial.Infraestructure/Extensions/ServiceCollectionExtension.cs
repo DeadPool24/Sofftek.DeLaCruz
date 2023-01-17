@@ -1,9 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using Sofftek.GestionComercial.Service.Core;
-using Sofftek.GestionComercial.Service.Interface;
-using Sofftek.GestionComercial.Service.Repository;
+using Sofftek.GestionComercial.Core.Core;
+using Sofftek.GestionComercial.Core.Interface;
+using Sofftek.GestionComercial.Core.Interface.IRepository;
+using Sofftek.GestionComercial.Core.Interface.IService;
+using Sofftek.GestionComercial.Core.Services;
+using Sofftek.GestionComercial.Infraestructure.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +14,14 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sofftek.GestionComercial.Service.Extensions
+namespace Sofftek.GestionComercial.Infraestructure.Extensions
 {
     public static class ServiceCollectionExtension
     {
         public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration) { 
         
-            services.AddScoped<IRepositoryVentas,RepositoryVentas>();
+            services.AddScoped<IServiceVentas,ServiceVentas>();
+            services.AddScoped<IRepositoryVentas, RepositoryVentas>();
             return services;
         }
 

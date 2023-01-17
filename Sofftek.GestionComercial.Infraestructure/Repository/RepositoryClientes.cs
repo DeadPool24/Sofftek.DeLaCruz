@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sofftek.GestionComercial.Service.Repository
+namespace Sofftek.GestionComercial.Infraestructure.Repository
 {
     public  class RepositoryClientes
     {

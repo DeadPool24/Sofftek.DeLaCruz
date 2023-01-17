@@ -1,9 +1,9 @@
-﻿using Sofftek.GestionComercial.Service.Interfaces.ICore;
+﻿using Sofftek.GestionComercial.Core.Interfaces.ICore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sofftek.GestionComercial.Service.Core
+namespace Sofftek.GestionComercial.Core.Core
 {
     public class Settings : ISettings
     {

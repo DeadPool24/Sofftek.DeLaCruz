@@ -1,4 +1,4 @@
-namespace Sofftek.GestionComercial.Service.Helpers;
+namespace Sofftek.GestionComercial.Core.Helpers;
 using AutoMapper;
 
 public class AutoMapperProfile : Profile

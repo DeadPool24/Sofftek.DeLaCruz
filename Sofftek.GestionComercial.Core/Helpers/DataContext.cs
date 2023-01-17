@@ -1,8 +1,8 @@
-namespace Sofftek.GestionComercial.Service.Helpers;
+namespace Sofftek.GestionComercial.Core.Helpers;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Sofftek.GestionComercial.Service.Entities;
+using Sofftek.GestionComercial.Core.Entities;
 
 public class DataContext : DbContext
 {

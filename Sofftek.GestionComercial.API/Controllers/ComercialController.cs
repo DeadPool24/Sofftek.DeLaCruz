@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Sofftek.GestionComercial.Service.Entities;
-using Sofftek.GestionComercial.Service.Interface;
+using Sofftek.GestionComercial.Core.Entities;
+using Sofftek.GestionComercial.Core.Interface;
+using Sofftek.GestionComercial.Core.Interface.IService;
 
 namespace Sofftek.GestionComercial.API.Controllers
 {
@@ -10,10 +11,10 @@ namespace Sofftek.GestionComercial.API.Controllers
     [ApiController]
     public class ComercialController : ControllerBase
     {
-        private IRepositoryVentas _repository;
-        public ComercialController(IRepositoryVentas repositoryVentas)
+        private IServiceVentas _service;
+        public ComercialController(IServiceVentas service)
         {
-            _repository = repositoryVentas;
+            _service = service;
         }
 
        
@@ -26,7 +27,7 @@ namespace Sofftek.GestionComercial.API.Controllers
         {
             try
             {
-                var result = _repository.listarVentas();
+                var result = _service.listarVentas();
                 return Ok(result);
             }
             catch (Exception ex)
@@ -46,8 +47,7 @@ namespace Sofftek.GestionComercial.API.Controllers
         {
             try
             {
-                venta.id_venta = new Guid();
-                _repository.guardarVenta(venta);
+                _service.guardarVenta(venta);
                 return Ok();
             }
             catch (Exception ex)

@@ -18,7 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sofftek.GestionComercial.Service\Sofftek.GestionComercial.Service.csproj" />
+    <ProjectReference Include="..\Sofftek.GestionComercial.Core\Sofftek.GestionComercial.Core.csproj" />
+    <ProjectReference Include="..\Sofftek.GestionComercial.Infraestructure\Sofftek.GestionComercial.Infraestructure.csproj" />
+    <ProjectReference Include="..\Sofftek.GestionComercial.Service\Sofftek.GestionComercial.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using Sofftek.GestionComercial.Service.Entities;
-using Sofftek.GestionComercial.Service.Helpers;
-using Sofftek.GestionComercial.Service.Interface;
+using Sofftek.GestionComercial.Core.Entities;
+using Sofftek.GestionComercial.Core.Helpers;
+using Sofftek.GestionComercial.Core.Interface.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sofftek.GestionComercial.Service.Repository
+namespace Sofftek.GestionComercial.Infraestructure.Repository
 {
     public class RepositoryVentas : IRepositoryVentas
     {
@@ -22,7 +22,6 @@ namespace Sofftek.GestionComercial.Service.Repository
             _context = context;
             _mapper = mapper;
         }
-
 
         public void guardarVenta(Venta venta)
         {

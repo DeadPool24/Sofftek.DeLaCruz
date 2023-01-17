@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sofftek.GestionComercial.Service.Interfaces.ICore
+namespace Sofftek.GestionComercial.Core.Interfaces.ICore
 {
     public interface ISettings
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sofftek.GestionComercial.Service.Entities
+namespace Sofftek.GestionComercial.Core.Entities
 {
     public class Articulo
     {
