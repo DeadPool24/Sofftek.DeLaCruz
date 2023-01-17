@@ -26,6 +26,8 @@ namespace Sofftek.GestionComercial.Infraestructure.Extensions
             services.AddScoped<IRepositoryVentas, RepositoryVentas>();
             services.AddScoped<IServiceClientes, ServiceClientes>();
             services.AddScoped<IRepositoryClientes, RepositoryClientes>();
+            services.AddScoped<IServiceArticulos, ServiceArticulos>();
+            services.AddScoped<IRepositoryArticulos, RepositoryArticulos>();
             services.AddScoped<IAuthService, AuthService>();
             return services;
         }
