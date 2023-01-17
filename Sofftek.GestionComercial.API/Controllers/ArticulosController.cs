@@ -28,7 +28,7 @@ namespace Sofftek.GestionComercial.API.Controllers
             try
             {
                 var result = _service.listarArticulos();
-                return Ok(new { Success = false, Message = "Listado exitoso", date = DateTime.Now, Data = result });
+                return Ok(new { Success = true, Message = "Listado exitoso", date = DateTime.Now, Data = result });
             }
             catch (Exception ex)
             {
@@ -49,7 +49,7 @@ namespace Sofftek.GestionComercial.API.Controllers
             try
             {
                 _service.guardarArticulo(articulo);
-                return Ok(new { Success = false, Message = "Registro exitoso", date = DateTime.Now, Data = articulo });
+                return Ok(new { Success = true, Message = "Registro exitoso", date = DateTime.Now, Data = articulo });
             }
             catch (Exception ex)
             {
@@ -69,7 +69,7 @@ namespace Sofftek.GestionComercial.API.Controllers
             try
             {
                 var result = _service.obtenerArticuloPorId(idarticulo);
-                return Ok(new { Success = false, Message = "Listado exitoso", date = DateTime.Now, Data = result });
+                return Ok(new { Success = true, Message = "Listado exitoso", date = DateTime.Now, Data = result });
             }
             catch (Exception ex)
             {
