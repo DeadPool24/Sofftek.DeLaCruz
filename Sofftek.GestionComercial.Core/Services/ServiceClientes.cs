@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Sofftek.GestionComercial.Core.Entities;
-using Sofftek.GestionComercial.Core.Helpers;
 using Sofftek.GestionComercial.Core.Interface.IRepository;
 using Sofftek.GestionComercial.Core.Interface.IService;
 using System;
@@ -12,33 +11,33 @@ using System.Threading.Tasks;
 
 namespace Sofftek.GestionComercial.Core.Services
 {
-    public class ServiceVentas : IServiceVentas
+    public class ServiceClientes : IServiceClientes
     {
-        private readonly IRepositoryVentas _repository;
+        private readonly IRepositoryClientes _repository;
         private readonly IMapper _mapper;
 
-        public ServiceVentas(
+        public ServiceClientes(
             IMapper mapper,
-            IRepositoryVentas repository)
+            IRepositoryClientes repository)
         {
             _mapper = mapper;
             _repository = repository;
         }
 
-        public void guardarVenta(Venta venta)
+        public void guardarCliente(Cliente client)
         {
-            venta.id_venta = new Guid();
-            _repository.guardarVenta(venta);
+            client.id_cliente = new Guid();
+            _repository.guardarCliente(client);
         }
 
-        public List<Venta> listarVentas()
+        public List<Cliente> listarCliente()
         {
-           return _repository.listarVentas();
+            return _repository.listarCliente();
         }
 
-        public void guardarDetalleVenta(DetalleVenta detalle)
+        public Cliente obtenerClientePorId(Guid id_cliente)
         {
-            guardarDetalleVenta(detalle);
+            return _repository.obtenerClientePorId(id_cliente);
         }
     }
 }

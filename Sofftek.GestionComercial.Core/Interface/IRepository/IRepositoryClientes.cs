@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Sofftek.GestionComercial.Core.Interface.IRepository
 {
-    public interface IRepositoryVentas
+    public interface IRepositoryClientes
     {
-        void guardarVenta(Venta venta);
-        List<Venta> listarVentas();
-        void guardarDetalleVenta(DetalleVenta detalle);
+        void guardarCliente(Cliente client);
+        List<Cliente> listarCliente();
+        Cliente obtenerClientePorId(Guid id_cliente);
     }
 }

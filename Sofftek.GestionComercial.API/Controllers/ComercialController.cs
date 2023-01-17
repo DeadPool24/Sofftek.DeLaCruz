@@ -44,7 +44,7 @@ namespace Sofftek.GestionComercial.API.Controllers
         /// </summary>
         /// <param name="venta">Datos de la venta</param>
         /// <returns>Ok/Bad</returns>
-        [HttpPost]
+        [HttpPost("guardarventa", Name = "guardarventa")]
         [Authorize]
         public IActionResult GuardarVenta(Venta venta)
         {
