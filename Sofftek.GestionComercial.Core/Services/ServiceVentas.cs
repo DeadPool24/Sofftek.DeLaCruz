@@ -25,20 +25,27 @@ namespace Sofftek.GestionComercial.Core.Services
             _repository = repository;
         }
 
-        public void guardarVenta(Venta venta)
+        public Guid guardarVenta(Venta venta)
         {
             venta.id_venta = new Guid();
             _repository.guardarVenta(venta);
+            return venta.id_venta;
         }
 
         public List<Venta> listarVentas()
         {
-           return _repository.listarVentas();
+            return _repository.listarVentas();
         }
 
-        public void guardarDetalleVenta(DetalleVenta detalle)
+        public List<Venta> listarVentaPorAsesor(Guid id_asesor)
         {
-            guardarDetalleVenta(detalle);
+            return _repository.listarVentaPorAsesor(id_asesor);
+        }
+
+        public void guardarDetalleVenta(List<DetalleVenta> detalle)
+        {
+            foreach (var item in detalle)
+                _repository.guardarDetalleVenta(item);
         }
     }
 }

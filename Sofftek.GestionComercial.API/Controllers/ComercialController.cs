@@ -30,7 +30,7 @@ namespace Sofftek.GestionComercial.API.Controllers
             try
             {
                 var result = _service.listarVentas();
-                return Ok(result);
+                return Ok(new { Success = true, Message = "Listado exitoso", date = DateTime.Now, Data = result });
             }
             catch (Exception ex)
             {
@@ -50,8 +50,29 @@ namespace Sofftek.GestionComercial.API.Controllers
         {
             try
             {
-                _service.guardarVenta(venta);
-                return Ok();
+                venta.id_venta = _service.guardarVenta(venta);
+                return Ok(new { Success = true, Message = "Venta registrada", date = DateTime.Now, Data = venta });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { Success = false, Message = ex.Message, date = DateTime.Now, Data = "NULL" });
+            }
+        }
+
+        
+        /// <summary>
+        /// Registra la lista del detalle de la venta
+        /// </summary>
+        /// <param name="detalle"></param>
+        /// <returns></returns>
+        [HttpPost("guardardetalleventa", Name = "guardardetalleventa")]
+        [Authorize]
+        public IActionResult GuardarDetalleVenta(List<DetalleVenta> detalle)
+        {
+            try
+            {
+                _service.guardarDetalleVenta(detalle);
+                return Ok(new { Success = true, Message = "Detalle de venta registrado", date = DateTime.Now, Data = detalle });
             }
             catch (Exception ex)
             {

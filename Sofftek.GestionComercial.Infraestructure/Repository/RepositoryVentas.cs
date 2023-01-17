@@ -37,6 +37,14 @@ namespace Sofftek.GestionComercial.Infraestructure.Repository
             return result.ToList();
         }
 
+        public List<Venta> listarVentaPorAsesor(Guid id_asesor)
+        {
+            var result = (from item in _context.Venta
+                          where item.estado == true && item.id_asesor.Equals(id_asesor)
+                          select item);
+            return result.ToList();
+        }
+
         public void guardarDetalleVenta(DetalleVenta detalle)
         {
             _context.DetalleVenta.Add(detalle);

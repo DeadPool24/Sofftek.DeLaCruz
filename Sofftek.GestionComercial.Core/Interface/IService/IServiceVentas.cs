@@ -9,7 +9,9 @@ namespace Sofftek.GestionComercial.Core.Interface.IService
 {
     public interface IServiceVentas
     {
-        void guardarVenta(Venta venta);
+        Guid guardarVenta(Venta venta);
         List<Venta> listarVentas();
+        List<Venta> listarVentaPorAsesor(Guid id_asesor);
+        void guardarDetalleVenta(List<DetalleVenta> detalle);
     }
 }

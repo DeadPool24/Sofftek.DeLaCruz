@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sofftek.GestionComercial.Core.Entities;
 using Sofftek.GestionComercial.Core.Interface.IService;
+using System.Web.Http.Results;
 
 namespace Sofftek.GestionComercial.API.Controllers
 {
@@ -27,7 +28,7 @@ namespace Sofftek.GestionComercial.API.Controllers
             try
             {
                 var result = _service.listarArticulos();
-                return Ok(result);
+                return Ok(new { Success = false, Message = "Listado exitoso", date = DateTime.Now, Data = result });
             }
             catch (Exception ex)
             {
@@ -48,7 +49,7 @@ namespace Sofftek.GestionComercial.API.Controllers
             try
             {
                 _service.guardarArticulo(articulo);
-                return Ok();
+                return Ok(new { Success = false, Message = "Registro exitoso", date = DateTime.Now, Data = articulo });
             }
             catch (Exception ex)
             {
@@ -68,7 +69,7 @@ namespace Sofftek.GestionComercial.API.Controllers
             try
             {
                 var result = _service.obtenerArticuloPorId(idarticulo);
-                return Ok(result);
+                return Ok(new { Success = false, Message = "Listado exitoso", date = DateTime.Now, Data = result });
             }
             catch (Exception ex)
             {

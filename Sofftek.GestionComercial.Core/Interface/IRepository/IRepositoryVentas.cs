@@ -12,5 +12,6 @@ namespace Sofftek.GestionComercial.Core.Interface.IRepository
         void guardarVenta(Venta venta);
         List<Venta> listarVentas();
         void guardarDetalleVenta(DetalleVenta detalle);
+        List<Venta> listarVentaPorAsesor(Guid id_asesor);
     }
 }
