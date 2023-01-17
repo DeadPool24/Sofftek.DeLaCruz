@@ -1,1 +1,69 @@
-<p>home works!</p>
+<div class="container">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Gestion Sofftek</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" [routerLink]="['/home']" >Articulos</a>
+                </li>
+              </ul>
+            </div>
+      </nav>
+    </div>
+    
+    <div class="row form-row">
+        <form (ngSubmit)="guardarArticulo(f)" #f="ngForm">
+            <div class="form-group">
+              <label for="formGroupExampleInput">Nombre Articulo</label>
+              <input type="text" class="form-control" [(ngModel)]="articulo.nombre" required name="nombreArticulo">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Precio</label>
+              <input type="number" class="form-control" [(ngModel)]="articulo.precio" required name="precioArticulo">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Costo</label>
+                <input type="number" class="form-control" [(ngModel)]="articulo.costo" required name="costoArticulo">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Stock</label>
+                <input type="number" class="form-control" [(ngModel)]="articulo.stock" required name="stockArticulo">
+              </div>
+              <div class="row form-row">
+                <div class="form-group">
+                        <button class="btn btn-primary">Guardar Articulo</button>
+                        <a class="btn btn-danger" [routerLink]="['/login']">Cerrar sesion</a>
+                </div>
+            </div>
+          </form>
+    </div>
+
+    
+
+    <div class="row form-row">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Articulo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Stock</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listaArticulos">
+                <td>{{item.nombre}}</td>
+                <td>{{item.precio}}</td>
+                <td>{{item.costo}}</td>
+                <td>{{item.stock}}</td>
+              </tr>
+             
+            </tbody>
+          </table>
+    </div>
+
+</div>

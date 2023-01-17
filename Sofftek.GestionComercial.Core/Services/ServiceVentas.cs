@@ -27,7 +27,7 @@ namespace Sofftek.GestionComercial.Core.Services
 
         public Guid guardarVenta(Venta venta)
         {
-            venta.id_venta = new Guid();
+            venta.id_venta = Guid.NewGuid();
             _repository.guardarVenta(venta);
             return venta.id_venta;
         }

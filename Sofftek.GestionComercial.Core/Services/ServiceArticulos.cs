@@ -26,7 +26,7 @@ namespace Sofftek.GestionComercial.Core.Services
 
         public void guardarArticulo(Articulo articulo)
         {
-            articulo.id_producto = new Guid();
+            articulo.id_producto = Guid.NewGuid();
             _repository.guardarArticulo(articulo);
         }
 

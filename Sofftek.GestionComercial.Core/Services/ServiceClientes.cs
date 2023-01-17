@@ -26,7 +26,7 @@ namespace Sofftek.GestionComercial.Core.Services
 
         public void guardarCliente(Cliente client)
         {
-            client.id_cliente = new Guid();
+            client.id_cliente = Guid.NewGuid();
             _repository.guardarCliente(client);
         }
 
