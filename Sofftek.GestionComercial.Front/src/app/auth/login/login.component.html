@@ -1,0 +1,32 @@
+<div class="container-auth">
+
+
+    <div class="container-auth__formulario">
+  
+      <div>
+  
+        <div class="logo">
+        </div>
+  
+        <form [formGroup]="frmLogin" (ngSubmit)="validarUsuario()">
+  
+          <div class="">
+            <input class="form-control" formControlName="user" placeholder="Ingrese su usuario" maxlength="20" type="text">
+          </div>
+          <br>
+          <br>
+          <div appearance="fill">
+            <input type="{{typeInput}}" formControlName="password" placeholder="Ingrese su contraseña">
+          </div>
+  
+          <div class="form-group">
+            <button color="primary" [disabled]="buttonClicked">Ingresar</button>
+          </div>
+        </form>
+        
+        <span class="project-name">Sistema Gestión Promociones</span>
+      </div>
+  
+    </div>
+  
+  </div>

@@ -25,7 +25,7 @@ builder.Services
 builder.Services.AddDbContext<DataContext>();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("CorsPolicy", builder => builder
+    options.AddPolicy("allowedOrigin", builder => builder
     .AllowAnyOrigin()
     .AllowAnyMethod()
     .AllowAnyHeader());
